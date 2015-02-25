@@ -4,7 +4,7 @@ class Data
     url:[]
     id:[]
     locale:'es-mx'
-    name:"::Nissan::"
+    name:"::Foo::"
     userInfo:null
 
     constructor:(@callback=null)->
@@ -42,7 +42,7 @@ class Data
 
         null
 
-        
+
     onRequestDone:(e, type=null) =>
         if type is "userInfo"
             @userInfo = e

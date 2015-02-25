@@ -1,31 +1,14 @@
-class MainRouter extends Backbone.Router
-    routes:
-        '': 'index'
+Controller = require 'controllers/main'
+
+class MainRouter extends Marionette.AppRouter
+    controller: new Controller
+    appRoutes:
+        '': 'index',
+        'dashboard': 'dashboard'
 
     initialize:()->
-        Backbone.history.start()
-        @customViews()
-
+        if(!Backbone.history)
+            Backbone.history.start()
         return null
-        
-    index: =>
-        @setPageTitle("HOME")
-
-        return null
-
-
-    customViews:=>
-
-        return null
-        
-
-    setPageTitle: (sub=null) ->
-
-        title = App.data.name + " - " + sub
-
-        if window.document.title isnt title then window.document.title = title
-
-        return null
-
 
 module.exports = MainRouter

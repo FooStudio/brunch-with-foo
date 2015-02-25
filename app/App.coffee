@@ -1,112 +1,86 @@
-###
 MainRouter = require 'routers/main'
 Facebook = require 'lib/facebook'
 Data = require 'Data'
 Share = require 'lib/share'
 Breakpoint = require 'lib/breakpoints'
 AuthManager = require 'lib/AuthManager'
-###
 
-class App extends Mn.Application
+
+
+class App extends Marionette.Application
     debug: true;
     views: null;
     data: null;
     width: window.innerWidth;
     height: window.innerHeight;
     objReady: 0;
+    radio: Backbone.Wreqr.radio.channel('global')
 
     initialize:(options)->
-        console.log 'My options:', options
+        if @debug
+            console.log 'App options:', options
         require 'lib/helpers'
         @addListeners()
 
+
     addListeners:=>
         $(window).on 'resize', @resize
-        this.on 'before:start', @onBeforeStart
-        this.on 'start', @onStart
+
 
     onBeforeStart:(options)=>
-        console.log 'before:start:',options
+        if @debug
+            console.info("before:start", options)
+
 
     onStart:(options)=>
-        console.log 'start:', options
-        if(Backbone.history)
-            Backbone.history.start()
+
+        if @debug
+            console.info("start:", options)
+
+        @data = new Data @objectComplete
+        @breakPoints = new Breakpoint @objectComplete
+
+        if @debug
+            #console.info @data
+            null
 
     resize:=>
         @width = window.innerWidth
         @height = window.innerHeight
 
-
-
-    ###
-    constructor: (@LIVE)->
-        require 'lib/helpers'
-        @addListeners()
-        null
-
-    addListeners: =>
-        $(window).on 'resize', @resize
-
-        null
-
-    resize: =>
-        @width = window.innerWidth
-        @height = window.innerHeight
-
-        null
-
     objectComplete: =>
-        @objReady++
+        @objReady++;
         if @objReady >= 2
             @initApp()
 
-        null
-
-    init: ()=>
-        #preloader, remember change objectComplete method
-        @data = new Data @objectComplete
-        #@breakPoints = new Breakpoint @objectComplete
-        # console.log @data
-        return
 
     initApp: ()=>
-        if @debug and bowser.name is "Chrome"
+        if @debug and bowser.name is 'Chrome'
             @stats = new MemoryStats()
-            @renderStats()
+            @renderStats();
 
         @data = new Data
-        @auth = new AuthManager()
-        @share = new Share()
-        @sections = new MainRouter()
+        #@auth = new AuthManager()
+        @share = new Share
+        @sections = new MainRouter
         @breakPoints = new Breakpoint
 
         @initSDKs()
         @animate()
 
-        null
+    initSDKs:()=>
+        ##Facebook.load()
+        #askPermissions()
 
-    initSDKs: ->
-        Facebook.load()
-        # @askPermisions()
-
-        null
-
-    animate: =>
+    animate:()=>
         requestAnimationFrame(@animate)
-        if @debulg
-            @stats.update();
-
-        null
+        if(@debug)
+            @stats.update()
 
     renderStats: ()=>
         @stats.domElement.style.position = 'fixed'
         @stats.domElement.style.right = '0px'
         @stats.domElement.style.bottom = '0px'
         document.body.appendChild(@stats.domElement)
-
-        null
-
-###
 
 module.exports = App

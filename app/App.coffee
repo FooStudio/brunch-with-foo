@@ -16,16 +16,28 @@ class App extends Mn.Application
     objReady: 0;
 
     initialize:(options)->
-        console.log('My options:', options);
+        console.log 'My options:', options
         require 'lib/helpers'
         @addListeners()
 
     addListeners:=>
         $(window).on 'resize', @resize
+        this.on 'before:start', @onBeforeStart
+        this.on 'start', @onStart
+
+    onBeforeStart:(options)=>
+        console.log 'before:start:',options
+
+    onStart:(options)=>
+        console.log 'start:', options
+        if(Backbone.history)
+            Backbone.history.start()
 
     resize:=>
         @width = window.innerWidth
         @height = window.innerHeight
+
+
 
     ###
     constructor: (@LIVE)->

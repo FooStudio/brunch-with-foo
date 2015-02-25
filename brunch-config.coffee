@@ -1,43 +1,43 @@
 exports.config =
-  files:
-    javascripts:
-      joinTo:
-        'js/app.js': /^(vendor|bower_components|app)/
+    files:
+        javascripts:
+            joinTo:
+                'js/app.js': /^(vendor|bower_components|app)/
 
-      order:
-        after: ['bower_components/swag/lib/swag.js']
+            order:
+                after: ['bower_components/requirejs/require.js']
 
-      pluginHelpers: 'js/app.js'
+            pluginHelpers: 'js/app.js'
 
-    stylesheets:
-      joinTo:
-        'css/app.css': /^(vendor|bower_components|app)/
+        stylesheets:
+            joinTo:
+                'css/app.css': /^(vendor|bower_components|app)/
 
-    templates:
-      joinTo: 'js/app.js'
+        templates:
+            joinTo: 'js/app.js'
 
-  plugins:
-    autoReload:
-      enabled:
-        js: on
-        css: on
-        assets: off
+    plugins:
+        autoReload:
+            enabled:
+                js: on
+                css: on
+                assets: off
 
-    coffeelint:
-      pattern: /^app\/.*\.coffee$/
+        coffeelint:
+            pattern: /^app\/.*\.coffee$/
 
-      options:
-        indentation:
-          value: 4
-          level: "warn"
+            options:
+                indentation:
+                    value: 4
+                    level: "warn"
 
-        max_line_length:
-          level: "ignore"
+                max_line_length:
+                    level: "ignore"
 
-        no_trailing_semicolons:
-          level: "ignore"
+                no_trailing_semicolons:
+                    level: "ignore"
 
-  conventions:
-    assets: /(assets|vendor\/assets|font)/
+    conventions:
+        assets: /(assets|vendor\/assets|font)/
 
 

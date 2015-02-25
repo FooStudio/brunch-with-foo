@@ -9,12 +9,3 @@ view = (window or document)
 
 view.App = new App options
 
-
-###
-view.App.Vent = _.clone(Backbone.Events)
-
-if view.App
-  $ ->
-    view.App.init()
-
-###

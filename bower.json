@@ -1,0 +1,48 @@
+{
+  "name": "example-app",
+  "version": "0.1.0",
+  "main": "public/javascripts/app.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "swag": "~0.5.0",
+    "lodash": "~2",
+    "jquery": "~2",
+    "backbone": "~1",
+    "normalize-css": "~2",
+    "h5bp-helpers": "~0.1",
+    "font-awesome": "~4",
+    "isMobile": "~0.3.5",
+    "gsap": "~1.15.1",
+    "moment": "~2.9.0",
+    "mathjs": "~1.2.0",
+    "bowser": "~0.7.2",
+    "popcornjs": "~1.5.10",
+    "memory-stats": "*",
+    "neat": "~1.7.1",
+    "bourbon":"4.2.1",
+    "layoutmanager": "~0.9.6",
+    "handlebars": "*"
+  },
+  "overrides": {
+    "backbone": {
+      "main": "backbone.js",
+      "dependencies": {
+        "lodash": "*",
+        "jquery": "*"
+      }
+    },
+    "font-awesome": {
+      "main": [
+        "fonts",
+        "css"
+      ]
+    },
+    "swag": {
+      "dependencies": {}
+    }
+  }
+}

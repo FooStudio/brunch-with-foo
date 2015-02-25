@@ -1,0 +1,7 @@
+AbstractView = require 'base/AbstractView'
+
+class {{#camelize}}{{name}}{{/camelize}}View extends AbstractView
+    className: '{{name}}'
+    template : require 'views/templates/{{name}}'
+
+module.exports = {{#camelize}}{{name}}{{/camelize}}View

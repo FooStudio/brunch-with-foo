@@ -1,0 +1,8 @@
+{{#camelize}}{{name}}{{/camelize}}Model = require '../models/{{name}}'
+
+AbstractView = require = 'views/base/AbstractView'
+
+class {{#camelize}}{{name}}{{/camelize}}View extends AbstractView
+    model: new {{#camelize}}{{name}}{{/camelize}}Model()
+
+module.exports = {{#camelize}}{{name}}{{/camelize}}View

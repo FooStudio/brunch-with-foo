@@ -10,6 +10,7 @@
 - [jQuery](https://github.com/jquery/jquery)
 - [Lodash](https://github.com/bestiejs/lodash)
 - [Backbone](https://github.com/jashkenas/backbone)
+- [Marionette](http://marionettejs.com/)
 - [Swag](https://github.com/elving/swag)
 - [Font Awesome](https://github.com/FortAwesome/Font-Awesome)
 - [HTML5 Boilerplate Helpers](https://github.com/h5bp/html5-boilerplate)

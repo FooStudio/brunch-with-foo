@@ -1,11 +1,24 @@
 exports.config =
     files:
         javascripts:
+            defaultExtension: 'coffee'
             joinTo:
                 'js/app.js': /^(vendor|bower_components|app)/
 
             order:
-                after: ['bower_components/requirejs/require.js']
+                before: [
+                    'bower_components/jquery/dist/jquery.js',
+                    'bower_components/lodash/dist/lodash.compat.js',
+                    'bower_components/backbone/backbone.js',
+                    'bower_components/backbone.marionette/lib/backbone.marionette.js',
+                    'bower_components/backbone.babysitter/lib/backbone.babysitter.js',
+                    'bower_components/backbone.wreqr/lib/backbone.wreqr.js'
+                ]
+                after: [
+
+                    'bower_components/swag/lib/swag.js'
+                ]
+
 
             pluginHelpers: 'js/app.js'
 

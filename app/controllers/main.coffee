@@ -1,7 +1,4 @@
-class MainController
-
-    constructor:()->
-        null
+class MainController extends Marionette.Controller
 
     index:()=>
         @setPageTitle("HOME")

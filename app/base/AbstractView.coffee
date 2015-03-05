@@ -1,4 +1,4 @@
-class AbstractView extends Backbone.View
+class AbstractView extends Marionette.View
 
     App:()->
         return window.App

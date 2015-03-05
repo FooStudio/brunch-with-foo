@@ -6,9 +6,4 @@ class MainRouter extends Marionette.AppRouter
         '': 'index',
         'dashboard': 'dashboard'
 
-    initialize:()->
-        if(!Backbone.history)
-            Backbone.history.start()
-        return null
-
 module.exports = MainRouter

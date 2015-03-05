@@ -4,6 +4,7 @@ Data = require 'Data'
 Share = require 'lib/share'
 Breakpoint = require 'lib/breakpoints'
 AuthManager = require 'lib/AuthManager'
+Layout = require 'layouts/AppLayout'
 
 
 
@@ -16,9 +17,10 @@ class App extends Marionette.Application
     objReady: 0;
     radio: Backbone.Wreqr.radio.channel('global')
 
+
     initialize:(options)->
         if @debug
-            console.log 'App options:', options
+            console.info 'App options:', options
         require 'lib/helpers'
         @addListeners()
 
@@ -33,9 +35,9 @@ class App extends Marionette.Application
 
 
     onStart:(options)=>
-
         if @debug
             console.info("start:", options)
+
 
         @data = new Data @objectComplete
         @breakPoints = new Breakpoint @objectComplete
@@ -59,18 +61,26 @@ class App extends Marionette.Application
             @stats = new MemoryStats()
             @renderStats();
 
+
         @data = new Data
-        #@auth = new AuthManager()
+        @auth = new AuthManager()
         @share = new Share
         @sections = new MainRouter
         @breakPoints = new Breakpoint
 
+        @rootView = new Layout
+        @rootView.render();
+
+        if Backbone.history
+            Backbone.history.start()
+
         @initSDKs()
         @animate()
 
-    initSDKs:()=>
+    initSDKs:()->
         ##Facebook.load()
         #askPermissions()
+        null
 
     animate:()=>
         requestAnimationFrame(@animate)

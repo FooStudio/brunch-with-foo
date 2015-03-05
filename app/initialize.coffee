@@ -7,13 +7,6 @@ options.IS_LIVE = do -> return if window.location.host.indexOf('localhost') > -1
 
 view = (window or document)
 
-view.App = new App options
-view.App.start({data:"data", name:"name"})
+view.App = new App (options)
+view.App.start()
 
-
-###
-@loadInitialData().then(view.App.start)
-
-loadInitialData:()->
-    console.log("load initial data")
-####

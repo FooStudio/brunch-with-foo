@@ -1,6 +1,4 @@
-Backbone.Layout.configure({ manage: true })
-
-class {{#camelize}}{{name}}{{/camelize}}Layout extends Backbone.Layout
+class {{#camelize}}{{name}}{{/camelize}}Layout extends Marionette.LayoutView
         views:{}
 
 module.exports = {{#camelize}}{{name}}{{/camelize}}Layout

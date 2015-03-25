@@ -1,4 +1,4 @@
-class AbstractView extends Marionette.View
+class AbstractView extends Marionette.ItemView
 
     App:()->
         return window.App

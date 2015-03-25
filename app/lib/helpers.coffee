@@ -9,3 +9,9 @@ Backbone.View.prototype.leave = ->
     @off()
     if @childViews
         @childViews.forEach (v) -> v.leave()
+
+
+Marionette.Region.prototype.attachHtml = (view) ->
+	@$el.hide()
+	@$el.html(view.el)
+	@$el.fadeIn("slow")

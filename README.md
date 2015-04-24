@@ -29,7 +29,11 @@
 
 ## Animated Regions
 
+<<<<<<< HEAD
 - [Animated Region](AnimatedRegion.md)
+=======
+- [Animated Region](#AnimatedRegion)
+>>>>>>> af81ade08d85672099fc7c66e5e649687ec4e5ff
 
 ## Generators
 

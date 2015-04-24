@@ -27,6 +27,10 @@
     $ bower install
     $ brunch w -s
 
+## Animated Regions
+
+- [Animated Region](AnimatedRegion.md)
+
 ## Generators
 
 First install [scaffolt](https://github.com/paulmillr/scaffolt#readme):

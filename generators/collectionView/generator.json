@@ -1,20 +1,17 @@
 {
     "files": [{
         "from": "view.coffee.hbs",
-        "to": "app/views/{{name}}ItemView.coffee"
+        "to": "app/views/{{name}}CollectionView.coffee"
     }],
 
     "dependencies": [{
-        "name": "model",
-        "params": "{{name}}"
-    }, {
         "name": "view_test",
         "params": "{{name}}"
     }, {
-        "name": "style",
+        "name": "template",
         "params": "{{name}}"
     }, {
-        "name": "template",
+        "name": "style",
         "params": "{{name}}"
     }]
 }

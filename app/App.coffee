@@ -4,7 +4,7 @@ Data = require 'Data'
 Share = require 'lib/share'
 Breakpoint = require 'lib/breakpoints'
 AuthManager = require 'lib/AuthManager'
-Layout = require 'layouts/AppLayout'
+AudioManager = require 'lib/audioManager'
 
 
 
@@ -41,10 +41,9 @@ class App extends Marionette.Application
 
         @data = new Data @objectComplete
         @breakPoints = new Breakpoint @objectComplete
+        @audioManager = new AudioManager @objectComplete
+        @audioManager.load()
 
-        if @debug
-            #console.info @data
-            null
 
     resize:=>
         @width = window.innerWidth
@@ -68,8 +67,9 @@ class App extends Marionette.Application
         @sections = new MainRouter
         @breakPoints = new Breakpoint
 
-        @rootView = new Layout
-        @rootView.render();
+        # @rootView = new Layout
+        # @rootView.render();
+
 
         if Backbone.history
             Backbone.history.start()

@@ -1,7 +1,7 @@
 {
     "files": [{
         "from": "view.coffee.hbs",
-        "to": "app/views/{{name}}View.coffee"
+        "to": "app/views/{{name}}CompositeView.coffee"
     }],
 
     "dependencies": [{

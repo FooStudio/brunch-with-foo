@@ -5,16 +5,13 @@
     }],
 
     "dependencies": [{
-        "name": "model",
-        "params": "{{name}}"
-    }, {
         "name": "view_test",
         "params": "{{name}}"
     }, {
-        "name": "style",
+        "name": "template",
         "params": "{{name}}"
     }, {
-        "name": "template",
+        "name": "style",
         "params": "{{name}}"
     }]
 }

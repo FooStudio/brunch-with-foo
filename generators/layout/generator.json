@@ -1,7 +1,7 @@
 {
     "files": [{
         "from": "layout.coffee.hbs",
-        "to": "app/layouts/{{name}}Layout.coffee"
+        "to": "app/views/layouts/{{name}}Layout.coffee"
     }],
 
     "dependencies": [{

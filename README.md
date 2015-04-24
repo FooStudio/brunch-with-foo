@@ -35,7 +35,15 @@ First install [scaffolt](https://github.com/paulmillr/scaffolt#readme):
 
 Then you can use the following commands to generate files:
 
-    scaffolt view <name>
+    scaffolt itemView <name>
+        → app/views/name.coffee
+        → test/views/name_test.coffee
+
+    scaffolt compositeView <name>
+        → app/views/name.coffee
+        → test/views/name_test.coffee
+
+    scaffolt collectionView <name>
         → app/views/name.coffee
         → test/views/name_test.coffee
 
@@ -57,8 +65,8 @@ Then you can use the following commands to generate files:
         → test/collections/name_test.coffee
 
     scaffolt module <name>
-        → app/views/name.coffee
-        → test/views/name_test.coffee
+        → app/viewsItem/name.coffee
+        → test/viewsItem/name_test.coffee
         → app/models/name.coffee
         → test/models/name_test.coffee
         → app/views/styles/name.styl

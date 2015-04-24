@@ -1,4 +1,4 @@
-Layout = require 'layouts/AppLayout'
+Layout = require '../views/layouts/AppLayout'
 
 
 class MainController extends Marionette.Controller

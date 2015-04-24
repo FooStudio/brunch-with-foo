@@ -4,7 +4,6 @@ Data = require 'Data'
 Share = require 'lib/share'
 Breakpoint = require 'lib/breakpoints'
 AuthManager = require 'lib/AuthManager'
-Layout = require 'layouts/AppLayout'
 AudioManager = require 'lib/audioManager'
 
 

@@ -1,4 +1,4 @@
-Template = require 'layouts/templates/AppLayout'
+Template = require 'views/layouts/templates/AppLayout'
 HeaderView = require 'views/HeaderView'
 FooterView = require 'views/FooterView'
 ContentView = require 'views/ContentView'

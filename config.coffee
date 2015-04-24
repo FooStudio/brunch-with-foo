@@ -12,7 +12,7 @@ exports.config =
                     'bower_components/backbone/backbone.js',
                     'bower_components/backbone.marionette/lib/backbone.marionette.js',
                     'bower_components/backbone.babysitter/lib/backbone.babysitter.js',
-                    'bower_components/backbone.wreqr/lib/backbone.wreqr.js'
+                    # 'bower_components/backbone.wreqr/lib/backbone.wreqr.js'
                 ]
                 after: [
 

@@ -15,7 +15,7 @@ class App extends Marionette.Application
     width: window.innerWidth;
     height: window.innerHeight;
     objReady: 0;
-    radio: Backbone.Wreqr.radio.channel('global')
+    radio: Backbone.Radio.channel('global')
 
 
     initialize:(options)->
@@ -23,6 +23,7 @@ class App extends Marionette.Application
             console.info 'App options:', options
         require 'lib/helpers'
         @addListeners()
+        null
 
 
     addListeners:=>

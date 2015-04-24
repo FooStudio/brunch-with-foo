@@ -1,6 +1,6 @@
-AbstractView = require 'base/AbstractView'
+AbstractItemView = require 'base/AbstractItemView'
 
-class ContentView extends AbstractView
+class ContentView extends AbstractItemView
     className: 'Content'
     template : require 'views/templates/Content'
 

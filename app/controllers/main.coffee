@@ -1,13 +1,8 @@
-Layout = require '../views/layouts/AppLayout'
-
-
-class MainController extends Marionette.Controller
+class MainController
 
     index:()=>
         @setPageTitle("HOME")
 
-        @rootView = new Layout
-        @rootView.render();
 
     dashboard:()=>
         @setPageTitle("DASHBOARD")

@@ -7,10 +7,6 @@ Breakpoint = require 'lib/breakpoints'
 AuthManager = require 'lib/AuthManager'
 AudioManager = require 'lib/audioManager'
 
-
-
-
-
 class App extends Marionette.Application
     debug: true;
     views: null;

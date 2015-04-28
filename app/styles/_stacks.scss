@@ -1,0 +1,93 @@
+/*
+ * Required Stack Styles.
+ *
+ * You must provide a container that flows to the
+ * correct size for the stacked content. This will
+ * force the stacks wrapper, and each stack item,
+ * to fill the container.
+ */
+.stacks{
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include size(100%);
+    overflow: hidden;
+    @include transform(translate3d(0,0,0));
+
+    .stack-item{
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include size(100%);
+        @include transform(translate3d(0,0,0));
+    }
+
+}
+/* End Required Stack Styles */
+
+
+/*
+ * Animations to transition stack items in/out.
+ *
+ * Use these exactly as is, or provide your own and
+ * set the following StackView options as needed:
+ * - `inTransitionClass`
+ * - `outTransitionClass`
+ * - `transitionDelay`
+ */
+
+
+@include keyframes(slideInFromRight) {
+    0%{
+        @include transform(translateX(100%));
+    }
+    100%{
+        @include transform(translateX(0%));
+    }
+}
+
+.slideInFromRight{
+    @include animation-name(slideInFromRight);
+}
+
+
+@include keyframes(slideInFromLeft) {
+    0%{
+        @include transform(translateX(-100%));
+    }
+    100%{
+        @include transform(translateX(0%));
+    }
+}
+
+.slideInFromLeft{
+    @include animation-name(slideInFromLeft);
+}
+
+
+
+@include keyframes(slideOutToRight){
+    0%{
+        @include transform(translateX(0%));
+    }
+    100%{
+        @include transform(translateX(100%));
+    }
+}
+
+.slideOutToRight{
+    @include animation-name(slideOutToRight);
+}
+
+@include keyframes(slideOutToLeft){
+    0%{
+        @include transform(translateX(0%));
+    }
+    100%{
+        @include transform(translateX(-100%));
+    }
+}
+
+.slideOutToLeft{
+    @include animation-name(slideOutToLeft);
+}

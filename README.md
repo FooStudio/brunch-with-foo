@@ -29,6 +29,7 @@
 
 ## Animated Regions
 [Animated Region](AnimatedRegion.md)
+[Stack View](StackView.md)
 
 
 ## Generators

@@ -1,3 +1,4 @@
+Layout = require '../views/layouts/AppLayout'
 MainRouter = require 'routers/main'
 Facebook = require 'lib/facebook'
 Data = require 'Data'
@@ -5,8 +6,6 @@ Share = require 'lib/share'
 Breakpoint = require 'lib/breakpoints'
 AuthManager = require 'lib/AuthManager'
 AudioManager = require 'lib/audioManager'
-
-
 
 class App extends Marionette.Application
     debug: true;
@@ -69,6 +68,9 @@ class App extends Marionette.Application
         @share = new Share
         @sections = new MainRouter
         @breakPoints = new Breakpoint
+
+        @rootView = new Layout
+        @rootView.render();
 
         if Backbone.history
             Backbone.history.start()

@@ -53,4 +53,12 @@ exports.config =
     conventions:
         assets: /(assets|vendor\/assets|font)/
 
+    overrides:
+        production:
+            sourceMaps:yes
+            optimize:yes
+            plugins:
+                autoReload:
+                    enabled:false
+
 

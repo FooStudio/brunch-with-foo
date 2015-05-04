@@ -39,8 +39,8 @@ class App extends Marionette.Application
 
         @data = new Data @objectComplete
         @breakPoints = new Breakpoint @objectComplete
-        @audioManager = new AudioManager @objectComplete
-        @audioManager.load()
+        #@audioManager = new AudioManager @objectComplete
+        #@audioManager.load()
 
         null
 

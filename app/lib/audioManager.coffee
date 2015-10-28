@@ -6,8 +6,9 @@ class AudioManager
     ]
     isPlaying:false
 
-    constructor :() ->
+    constructor :(cb) ->
         console.log 'audio Init'
+        @setCallback cb
         @currentLoadIndex = 0
         return
 
@@ -16,40 +17,42 @@ class AudioManager
         null
 
     load : =>
-        @loadSound(@currentLoadIndex)
+        # console.log @currentLoadIndex
+        if @cb then @cb()
         return
 
-    loadSound : (index) =>
+    loadSound : (index, loadNext = true) =>
 
         sound = new Howl({
             urls   : [ AudioManager.SOUNDS[index].src ]
             loop   : AudioManager.SOUNDS[index].loop
             volume : if AudioManager.SOUNDS[index].volume then AudioManager.SOUNDS[index].volume else 1
             onload : =>
-                App.data.song[index] = sound
-                @onSoundLoaded(index, sound)
-            onend : =>
-                if @cb then @cb()
+                # App.data.song[index] = sound
+                @onSoundLoaded(index, sound, loadNext)
+            # onend : =>
+            #     if @cb then @cb()
         })
 
 
-    onSoundLoaded : (index, sound) =>
+    onSoundLoaded : (index, sound, loadNext) =>
         AudioManager.SOUNDS[index].sound = sound
         if AudioManager.SOUNDS[index].autoPlay
             s = AudioManager.SOUNDS[index]
             @play(s.id, s.fadeIn, s.volume)
-        @loadNext()
+        if loadNext
+            @loadNext()
         return
 
     loadNext : =>
-
         if @currentLoadIndex < AudioManager.SOUNDS.length - 1
             @currentLoadIndex++
             @load()
+        else
+            if @cb then @cb()
         return
 
-    getSoundById : (id) =>
-
+    getSoundById : (id) ->
         size = AudioManager.SOUNDS.length
         for i in [0...size]
             if AudioManager.SOUNDS[i].id == id
@@ -73,7 +76,7 @@ class AudioManager
 
         sound = @getSoundById(id)
 
-        
+
 
         if sound.status == 0
             console.log "Invalid ID"
@@ -98,6 +101,19 @@ class AudioManager
     stop : (id) =>
         sound = @getSoundById(id)
         sound.item.sound.stop()
+        @isPlaying = false
+
+    stopAll : () =>
+        for object in AudioManager.SOUNDS
+            sound = @getSoundById(object.id)
+            if sound.status == 0
+                console.log "Invalid ID"
+            else if sound.status == 1
+                sound.item.sound.stop()
+            else if sound.status == 2
+                sound.item.autoPlay = false
+                sound.item.fadeIn = true
+                sound.item.volume = 0.5
         @isPlaying = false
 
 

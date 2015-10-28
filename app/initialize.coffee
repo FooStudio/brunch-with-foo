@@ -6,18 +6,17 @@ options.IS_LIVE = do -> return if window.location.host.indexOf('localhost') > -1
 # IS_LIVE = false
 
 #Initialize fastclick
-FastClick.attach(document.body);
+FastClick.attach(document.body)
 
 #Raven initialize
-Raven.config('https://db420a4eee384d5ab4fd5dc890e87775@app.getsentry.com/42782').install()
+# Raven.config('https://db420a4eee384d5ab4fd5dc890e87775@app.getsentry.com/42782').install()
 
 view = (window or document)
 
 #Marionette Behaviors initialize
-window.Behaviors = {};
-Marionette.Behaviors.behaviorsLookup = ()=>
+window.Behaviors = {}
+Marionette.Behaviors.behaviorsLookup = ()->
     return window.Behaviors;
 
 view.App = new App (options)
 view.App.start()
-

@@ -13,13 +13,13 @@ class Data
 
     init:=>
         if App.LIVE
-            @url.endPoint = "//private-a85a3-unbreakeable.apiary-mock.com"
-            @id.FB = "668174739995434"
-            @id.GA = "ua2423423"
+            @url.endPoint = ""
+            @id.FB = ""
+            @id.GA = ""
         else
-            @url.endPoint = "//private-a85a3-unbreakeable.apiary-mock.com"
-            @id.FB = "668174739995434"
-            @id.GA = "ua2423423"
+            @url.endPoint = ""
+            @id.FB = ""
+            @id.GA = ""
 
         # @getUserInfo()
         @callback?()
@@ -31,7 +31,7 @@ class Data
             url: @url.endPoint + "/gallery"
             dataType: "json"
             data:
-                "email"     : "homero.sousa@gmail.com"
+                "email"     : "foo@bar.com"
                 "raceNumber": "12345"
             done: (e)=>
                 @isRequestUserInfo = true
@@ -49,8 +49,7 @@ class Data
 
         null
 
-    onRequestError:()=>
+    onRequestError:()->
         console.log "something is wrong"
 
 module.exports = Data
-

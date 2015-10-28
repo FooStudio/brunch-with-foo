@@ -12,6 +12,6 @@ Backbone.View.prototype.leave = ->
 
 
 Marionette.Region.prototype.attachHtml = (view) ->
-	@$el.hide()
-	@$el.html(view.el)
-	@$el.fadeIn("slow")
+    @$el.hide()
+    @$el.html(view.el)
+    @$el.fadeIn("slow")

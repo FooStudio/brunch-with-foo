@@ -52,7 +52,8 @@ class AnimatedRegion extends Marionette.Region
         Marionette.triggerMethod.call(@newView, "show")
         Marionette.triggerMethod.call(@, "show", @newView)
 
-    onTransitionHiden: ()=>
+    onTransitionHiden: ()->
+        return
         #Do something when the old view is hiden. Can be omited?
 
 

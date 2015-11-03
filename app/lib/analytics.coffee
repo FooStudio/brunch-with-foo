@@ -14,7 +14,7 @@ class Analytics
         $.getJSON tags, @onTagsReceived
 
         return null
-        
+
 
     onTagsReceived : (data) =>
 

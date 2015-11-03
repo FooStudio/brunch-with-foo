@@ -8,12 +8,12 @@ AuthManager = require 'lib/AuthManager'
 AudioManager = require 'lib/audioManager'
 
 class App extends Marionette.Application
-    debug: true;
-    views: null;
-    data: null;
-    width: window.innerWidth;
-    height: window.innerHeight;
-    objReady: 0;
+    debug: true
+    views: null
+    data: null
+    width: window.innerWidth
+    height: window.innerHeight
+    objReady: 0
 
     initialize:(options)->
         if @debug
@@ -31,17 +31,14 @@ class App extends Marionette.Application
             console.info("before:start", options)
         null
 
-
     onStart:(options)=>
         if @debug
             console.info("start:", options)
-
-
         @data = new Data @objectComplete
         @breakPoints = new Breakpoint @objectComplete
-        #@audioManager = new AudioManager @objectComplete
-        #@audioManager.load()
-
+        # If audioManager is loader objReady must be 3
+        # @audioManager = new AudioManager @objectComplete
+        # @audioManager.load()
         null
 
 
@@ -52,7 +49,7 @@ class App extends Marionette.Application
         null
 
     objectComplete: =>
-        @objReady++;
+        @objReady++
         if @objReady >= 2
             @initApp()
         null
@@ -60,17 +57,15 @@ class App extends Marionette.Application
     initApp: ()=>
         if @debug and bowser.name is 'Chrome'
             @stats = new MemoryStats()
-            @renderStats();
+            @renderStats()
 
-
-        @data = new Data
         @auth = new AuthManager()
         @share = new Share
         @sections = new MainRouter
         @breakPoints = new Breakpoint
 
         @rootView = new Layout
-        @rootView.render();
+        @rootView.render()
 
         if Backbone.history
             Backbone.history.start()

@@ -1,41 +1,42 @@
 {
-    "name": "example-app",
-    "version": "0.1.0",
-    "main": "public/javascripts/app.js",
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components"
-    ],
-    "dependencies": {
-        "swag": "~0.5.0",
-        "backbone.marionette": "~2.4.0",
-        "jquery": "~2",
-        "normalize-css": "~2",
-        "h5bp-helpers": "~0.1",
-        "isMobile": "~0.3.5",
-        "gsap": "~1.15.1",
-        "bowser": "~0.7.2",
-        "memory-stats": "*",
-        "neat": "~1.7.1",
-        "bourbon": "4.2.1",
-        "fastclick":"latest"
+  "name": "brunch-with-foo",
+  "version": "0.1.0",
+  "main": "public/javascripts/app.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "swag": "^0.7.0",
+    "backbone.marionette": "^2.4.0",
+    "jquery": "^2",
+    "normalize-css": "^3.0.3",
+    "h5bp-helpers": "^0.1",
+    "isMobile": "^0.3.5",
+    "gsap": "^1.15.1",
+    "bowser": "^1.0.0",
+    "memory-stats": "*",
+    "neat": "^1.7.1",
+    "bourbon": "^4.2.1",
+    "fastclick": "latest",
+    "howler.js": "~1.1.28"
+  },
+  "overrides": {
+    "backbone.marionette": {
+      "backbone": "^1.2.3",
+      "backbone.babysitter": "^0.1.0",
+      "backbone.wreqr": "^1.0.0",
+      "jquery": "^1.8.0 || ^2.0.0"
     },
-    "overrides": {
-        "backbone.marionette": {
-            "backbone": "~1",
-            "backbone.babysitter": "^0.1.0",
-            "backbone.wreqr": "^1.0.0",
-            "jquery": "^1.8.0 || ^2.0.0"
-        },
-        "font-awesome": {
-            "main": [
-                "fonts",
-                "css"
-            ]
-        },
-        "swag": {
-            "dependencies": {}
-        }
+    "font-awesome": {
+      "main": [
+        "fonts",
+        "css"
+      ]
+    },
+    "swag": {
+      "dependencies": {}
     }
+  }
 }

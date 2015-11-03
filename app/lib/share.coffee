@@ -61,7 +61,7 @@ class Share
         url   = encodeURIComponent(url or @url)
         if copy is ''
             copy = 'Twitter share'
-            
+
         descr = encodeURIComponent(copy)
 
         @openWin "http://twitter.com/intent/tweet/?text=#{descr}&url=#{url}", 600, 300

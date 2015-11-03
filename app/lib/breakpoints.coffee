@@ -24,6 +24,6 @@ class Breakpoint
         $('body').addClass bowser.name
         $('body').addClass bowser.version
         return
-                
+
 
 module.exports = Breakpoint
